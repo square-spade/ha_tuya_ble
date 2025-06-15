@@ -139,6 +139,18 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
                 TuyaBLEWeatherDelayMapping(dp_id=10),
                 TuyaBLESmartWeatherMapping(dp_id=13),
             ],
+            "svhikeyq": [  # Smart water timer
+                TuyaBLESelectMapping(
+                        dp_id=12,
+                        description=SelectEntityDescription(
+                            key="work_state",
+                            options=["auto", "manual", "idle"],
+                            entity_category=EntityCategory.CONFIG,
+                        ),
+                ),
+                TuyaBLEWeatherDelayMapping(dp_id=10),
+                TuyaBLESmartWeatherMapping(dp_id=13),
+            ],
         },
     ),
     "co2bj": TuyaBLECategorySelectMapping(
