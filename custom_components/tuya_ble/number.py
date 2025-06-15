@@ -542,7 +542,7 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
     "sfkzq": TuyaBLECategoryNumberMapping(
         products={
             **dict.fromkeys(
-                ["46zia2nz", "1fcnd8xk", "0axr5s0b"],
+                ["46zia2nz", "1fcnd8xk", "0axr5s0b", "svhikeyq"],
                 [
                     TuyaBLENumberMapping(
                         dp_id=11,
@@ -550,7 +550,7 @@ mapping: dict[str, TuyaBLECategoryNumberMapping] = {
                             key="countdown_duration",
                             icon="mdi:timer",
                             native_max_value=86400,
-                            native_min_value=1,
+                            native_min_value=0,
                             native_unit_of_measurement=UnitOfTime.SECONDS,
                             native_step=1,
                         ),
