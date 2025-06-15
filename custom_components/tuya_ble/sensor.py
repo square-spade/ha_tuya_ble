@@ -604,7 +604,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     TuyaBLESensorMapping(
                         dp_id=9,
                         description=SensorEntityDescription(
-                            key="use_time",
+                            key="time_use",
                             device_class=SensorDeviceClass.DURATION,
                             native_unit_of_measurement=UnitOfTime.SECONDS,
                             state_class=SensorStateClass.MEASUREMENT,
