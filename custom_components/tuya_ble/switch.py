@@ -175,7 +175,6 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
             ],
             "svhikeyq": [ #Smart water valve
                 TuyaBLEWaterValveSwitchMapping(dp_id=1),
-                TuyaBLEWaterValveWeatherSwitchMapping(dp_id=13),
             ],
         },
     ),
