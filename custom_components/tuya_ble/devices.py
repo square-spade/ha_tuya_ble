@@ -523,6 +523,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             **dict.fromkeys(
                 [
                     "svhikeyq",
+                    "0axr5s0b",
                 ],  # device product_id
             TuyaBLEProductInfo(  
                 name="Valve controller",
@@ -531,7 +532,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                         countdown=11,
                         weather_delay=10,
                         smart_weather=13,
-                        use_time=9,
+                        use_time=15,
                     ),
                 ),
             ), 
