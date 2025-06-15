@@ -172,9 +172,10 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
             **dict.fromkeys(
                 ["nxquc5lb", "svhikeyq"],
                 [  # Smart water timer - SOP10
-                TuyaBLEWaterValveSwitchMapping(dp_id=1),
-                TuyaBLEWaterValveWeatherSwitchMapping(dp_id=14),
-            ],
+                    TuyaBLEWaterValveSwitchMapping(dp_id=1),
+                    TuyaBLEWaterValveWeatherSwitchMapping(dp_id=14),
+                ],
+            ),
         },
     ),
     "co2bj": TuyaBLECategorySwitchMapping(
