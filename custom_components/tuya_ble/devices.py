@@ -525,7 +525,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                     "svhikeyq",
                     "0axr5s0b",
                 ],  # device product_id
-                TuyaBLEProductInfo(  
+                TuyaBLEProductInfo(
                     name="Valve controller",
                     watervalve=TuyaBLEWaterValveInfo(
                         switch=1,
@@ -535,7 +535,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                         use_time=15,
                     ),
                 ),
-            ), 
+            ),
             **dict.fromkeys(
                 [
                     "nxquc5lb",
