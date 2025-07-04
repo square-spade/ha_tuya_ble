@@ -74,6 +74,16 @@ class TuyaBLEWaterValveInfo:
     use_time: int
 
 @dataclass
+class TuyaBLELockInfo:
+    """Model a lock"""
+
+    bluetooth_unlock: int
+    unlock_ble: int | None = None
+    unlock_fingerprint: int | None = None
+    battery: int
+    status: int | None = None
+
+@dataclass
 class TuyaBLEProductInfo:
     """Model product info"""
 
@@ -81,7 +91,7 @@ class TuyaBLEProductInfo:
     manufacturer: str = DEVICE_DEF_MANUFACTURER
     fingerbot: TuyaBLEFingerbotInfo | None = None
     watervalve: TuyaBLEWaterValveInfo | None = None
-    lock: int | None = None
+    lock: TuyaBLELockInfo | None = None
 
 
 class TuyaBLEEntity(CoordinatorEntity):
@@ -365,7 +375,13 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
             "k53ok3u9": TuyaBLEProductInfo(
                 name="Fingerprint Smart Lock",
-                lock=1,
+                lock=TuyaBLELockInfo(
+                    bluetooth_unlock=6,
+                    unlock_ble=19,
+                    unlock_fingerprint=12,
+                    battery=8,
+                    status=21,
+                ),
             ),
         },
     ),
