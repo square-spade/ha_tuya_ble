@@ -599,9 +599,17 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                     manufacturer="Magiacous",
                 ),
             ),
+            "umzu0c2y": TuyaBLEProductInfo(  # device product_id
+                name="Floor Lamp",
+                manufacturer="Magiacous",
+            ),
+            "6jxcdae1": TuyaBLEProductInfo(  # device product_id
+                name="Sunset Lamp",
+                manufacturer="Comfamoli",
+            ),
         },
         info=TuyaBLEProductInfo(
-            name="Strip Lights",
+            name="Lights",
         ),
     ),
     "cl": TuyaBLECategoryInfo(
