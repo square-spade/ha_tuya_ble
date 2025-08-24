@@ -364,6 +364,10 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                 name="TEKXDD Fingerprint Smart Lock",
                 lock=1,
             ),
+            "k53ok3u9": TuyaBLEProductInfo(
+                name="Fingerprint Smart Lock",
+                lock=1,
+            ),
         },
     ),
     "dcb": TuyaBLECategoryInfo(
