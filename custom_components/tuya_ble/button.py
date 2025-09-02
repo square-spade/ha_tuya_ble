@@ -188,12 +188,6 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
                 ["okkyfgfs", "k53ok3u9"],  # Smart Lock
                 [
                     TuyaBLELockMapping(
-                        dp_id=6,
-                        description=ButtonEntityDescription(
-                            key="bluetooth_unlock",
-                        ),
-                    ),
-                    TuyaBLELockMapping(
                         dp_id=71,  # On click it opens the lock, just like connecting via Smart Life App
                                     # and holding the center button
                         description=ButtonEntityDescription(
