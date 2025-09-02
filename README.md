@@ -32,7 +32,7 @@ The integration works locally, but connection to Tuya BLE device requires device
 * Fingerbots (category_id 'szjqr')
   + Fingerbot (product_ids 'ltak7e1p', 'y6kttvd6', 'yrnk7mnn', 'nvr2rocq', 'bnt7wajf', 'rvdceqjh', '5xhbk964'), original device, first in category, powered by CR2 battery.
   + Adaprox Fingerbot (product_id 'y6kttvd6'), built-in battery with USB type C charging.
-  + Fingerbot Plus (product_ids 'blliqpsj', 'ndvkgsrm', 'yiihr7zh', 'neq16kgd', 'mknd4lci', 'riecov42', 'bs3ubslo'), almost same as original, has sensor button for manual control.
+  + Fingerbot Plus (product_ids 'blliqpsj', 'ndvkgsrm', 'yiihr7zh', 'neq16kgd', 'mknd4lci', 'riecov42', 'bs3ubslo', '6jcvqwh0'), almost same as original, has sensor button for manual control.
   + CubeTouch 1s (product_id '3yqdo5yt'), built-in battery with USB type C charging.
   + CubeTouch II (product_id 'xhf790if'), built-in battery with USB type C charging.
 
@@ -41,6 +41,7 @@ The integration works locally, but connection to Tuya BLE device requires device
 
 * Temperature and humidity sensors (category_id 'wsdcg')
   + Soil moisture sensor (product_id 'ojzlzzsw').
+  + Bluetooth Temperature Humidity Sensor (product_id 'jm6iasmb')
 
 * CO2 sensors (category_id 'co2bj')
   + CO2 Detector (product_id '59s19z5m').
@@ -48,6 +49,8 @@ The integration works locally, but connection to Tuya BLE device requires device
 * Smart Locks (category_id 'ms', 'jtmspro')
   + Smart Lock (product_id 'ludzroix', 'isk2p555', 'gumrixyt').
   + Raybuke K7 Pro+ (product_id 'xicdxood'), supports ble unlock and other small features.
+  + Fingerprint Smart Lock (product_id 'k53ok3u9')
+  + T55D: Battery & Door status (product_id 'bvclwu9b')
 
 * Climate (category_id 'wk')
   + Thermostatic Radiator Valve (product_ids 'drlajpqc', 'nhj2j7su').
@@ -72,6 +75,8 @@ The integration works locally, but connection to Tuya BLE device requires device
   
 * Lights
   + Most BLE light products should be supported as the Light class tries to get device description from the cloud when there are added but only Strip Lights (category_id 'dd') Magiacous RGB light bar (product_id 'nvfrtxlq') has has been tested
+  + Magiacous Floor Lamp (product_id 'umzu0c2y')
+  + Comfamoli Sunset Lamp (product_id '6jxcdae1')
     
     *Note that some light products are using Bluetooth Mesh protocols and not BLE and so aren't compatible with this integration. That's probably the case if your product isn't at least found (even if non-working) by this integration*
 
