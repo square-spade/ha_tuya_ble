@@ -219,6 +219,8 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     "gumrixyt",
                     "uamrw6h3",
                     "okkyfgfs",
+                    "bvclwu9b",
+                    "k53ok3u9",
                 ],  # Smart Lock
                 [
                     TuyaBLESensorMapping(
@@ -244,6 +246,19 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         ),
                     ),
                     TuyaBLEBatteryMapping(dp_id=8),
+                    TuyaBLESensorMapping(
+                        dp_id=40,
+                        description=SensorEntityDescription(
+                            key="lock_door_status",
+                            entity_category=EntityCategory.DIAGNOSTIC,
+                            device_class=SensorDeviceClass.ENUM,
+                            options=[
+                                "door_status_unknown",
+                                "door_status_open",
+                                "door_status_closed",
+                            ],
+                        ),
+                    ),
                 ],
             ),
         }
@@ -404,6 +419,37 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                 TuyaBLEBatteryMapping(dp_id=4),
             ],
             "iv7hudlj": [  # Bluetooth Temperature Humidity Sensor
+                TuyaBLETemperatureMapping(
+                    dp_id=1,
+                    coefficient=10.0,
+                    description=SensorEntityDescription(
+                        key="va_temperature",
+                        device_class=SensorDeviceClass.TEMPERATURE,
+                        native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+                        state_class=SensorStateClass.MEASUREMENT,
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=2,
+                    description=SensorEntityDescription(
+                        key="va_moisture",
+                        device_class=SensorDeviceClass.MOISTURE,
+                        native_unit_of_measurement=PERCENTAGE,
+                        state_class=SensorStateClass.MEASUREMENT,
+                    ),
+                ),
+                TuyaBLEBatteryMapping(
+                    dp_id=4,
+                    description=SensorEntityDescription(
+                        key="battery_percentage",
+                        device_class=SensorDeviceClass.BATTERY,
+                        native_unit_of_measurement=PERCENTAGE,
+                        entity_category=EntityCategory.DIAGNOSTIC,
+                        state_class=SensorStateClass.MEASUREMENT,
+                    ),
+                ),
+            ],
+            "jm6iasmb": [  # Bluetooth Temperature Humidity Sensor
                 TuyaBLETemperatureMapping(
                     dp_id=1,
                     coefficient=10.0,
