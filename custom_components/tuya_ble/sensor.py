@@ -159,8 +159,8 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         state_class=SensorStateClass.MEASUREMENT,
                     ),
                 ),
-            ]
-        }
+            ],
+        },
     ),
     "ms": TuyaBLECategorySensorMapping(
         products={
@@ -261,7 +261,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     ),
                 ],
             ),
-        }
+        },
     ),
     "jtmspro": TuyaBLECategorySensorMapping(
         products={
@@ -313,7 +313,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                 ),
                 TuyaBLEBatteryMapping(dp_id=8),
             ],
-        }
+        },
     ),
     "szjqr": TuyaBLECategorySensorMapping(
         products={
