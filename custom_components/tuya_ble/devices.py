@@ -367,9 +367,17 @@ devices_database: dict[str, TuyaBLECategoryInfo]= {
     "ms": TuyaBLECategoryInfo(
         products={
             **dict.fromkeys(
-                ["ludzroix", "isk2p555", "gumrixyt", "uamrw6h3"],
+                [
+                    "ludzroix",
+                    "isk2p555",
+                    "gumrixyt",
+                    "uamrw6h3",
+                    "sidhzylo",
+                    "mqc2hevy",
+                ],
                 TuyaBLEProductInfo(  # device product_id
                     name="Smart Lock",
+                    lock=1,
                 ),
             ),
             "okkyfgfs": TuyaBLEProductInfo(
@@ -408,12 +416,12 @@ devices_database: dict[str, TuyaBLECategoryInfo]= {
     ),
     "jtmspro": TuyaBLECategoryInfo(
         products={
-            "xicdxood": TuyaBLEProductInfo(  # device product_id
-                name="Raycube K7 Pro+",
-            ),
-            "ebd5e0uauqx0vfsp": TuyaBLEProductInfo(  # device product_id
-                name="CentralAcesso",
-            ),
+            "xicdxood": TuyaBLEProductInfo(name="Raycube K7 Pro+", lock=1),
+            "oyqux5vv": TuyaBLEProductInfo(name="LA-01 Smart lock", lock=1),
+            "rlyxv7pe": TuyaBLEProductInfo(name="A1 PRO MAX", lock=1),
+            "ebd5e0uauqx0vfsp": TuyaBLEProductInfo(name="CentralAcesso"),
+            "ajk32biq": TuyaBLEProductInfo(name="B16", lock=1),
+            "z7lj676i": TuyaBLEProductInfo(name="Smart Cylinder Lock", lock=1),
         },
     ),
     "szjqr": TuyaBLECategoryInfo(
@@ -487,6 +495,17 @@ devices_database: dict[str, TuyaBLECategoryInfo]= {
                     ),
                 ),
             ),
+            "yn4x5fa7": TuyaBLEProductInfo(
+                name="Nedis SmartLife Finger Robot",
+                fingerbot=TuyaBLEFingerbotInfo(
+                    switch=1,
+                    mode=2,
+                    up_position=4,
+                    down_position=5,
+                    hold_time=3,
+                    reverse_positions=6,
+                ),
+            ),
         },
     ),
     "kg": TuyaBLECategoryInfo(
@@ -525,28 +544,17 @@ devices_database: dict[str, TuyaBLECategoryInfo]= {
     ),
     "wsdcg": TuyaBLECategoryInfo(
         products={
-            "ojzlzzsw": TuyaBLEProductInfo(  # device product_id
-                name="Soil moisture sensor",
-            ),
-            "iv7hudlj": TuyaBLEProductInfo(
-                name="Bluetooth Temperature Humidity Sensor",
-            ),
-            "jm6iasmb": TuyaBLEProductInfo(
-                name="Bluetooth Temperature Humidity Sensor",
-            ),
-            "tv6peegl": TuyaBLEProductInfo(  # new device product_id
-                name="Soil Thermo-Hygrometer",
-            ),
-            "vlzqwckk": TuyaBLEProductInfo(
-                name="Temperature Humidity Sensor",
-            ),
+            "ojzlzzsw": TuyaBLEProductInfo(name="Soil moisture sensor"),
+            "iv7hudlj": TuyaBLEProductInfo(name="Temperature Humidity Sensor"),
+            "jm6iasmb": TuyaBLEProductInfo(name="Temperature Humidity Sensor"),
+            "tv6peegl": TuyaBLEProductInfo(name="Soil Thermo-Hygrometer"),
+            "vlzqwckk": TuyaBLEProductInfo(name="Temperature Humidity Sensor"),
+            "tr0kabuq": TuyaBLEProductInfo(name="Temperature Humidity Sensor"),
         },
     ),
     "znhsb": TuyaBLECategoryInfo(
         products={
-            "cdlandip": TuyaBLEProductInfo(  # device product_id
-                name="Smart water bottle",
-            ),
+            "cdlandip": TuyaBLEProductInfo(name="Smart water bottle"),
         },
     ),
     "sfkzq": TuyaBLECategoryInfo(
@@ -610,23 +618,19 @@ devices_database: dict[str, TuyaBLECategoryInfo]= {
     ),
     "dd": TuyaBLECategoryInfo(
         products={
-            **dict.fromkeys(
-                [
-                    "nvfrtxlq",
-                ],  # device product_id
-                TuyaBLEProductInfo(
-                    name="LGB102 Magic Strip Lights",
-                    manufacturer="Magiacous",
-                ),
+            "nvfrtxlq": TuyaBLEProductInfo(
+                name="LGB102 Magic Strip Lights",
+                manufacturer="Magiacous",
             ),
-            "umzu0c2y": TuyaBLEProductInfo(  # device product_id
+            "umzu0c2y": TuyaBLEProductInfo(
                 name="Floor Lamp",
                 manufacturer="Magiacous",
             ),
-            "6jxcdae1": TuyaBLEProductInfo(  # device product_id
+            "6jxcdae1": TuyaBLEProductInfo(
                 name="Sunset Lamp",
                 manufacturer="Comfamoli",
             ),
+            "0qgrjxum": TuyaBLEProductInfo(name="RGB Strip Light"),
         },
         info=TuyaBLEProductInfo(
             name="Lights",
@@ -638,6 +642,14 @@ devices_database: dict[str, TuyaBLECategoryInfo]= {
                 ["4pbr8eig", "vlwf3ud6"], TuyaBLEProductInfo(name="Blind Controller")
             ),
             "kcy0x4pi": TuyaBLEProductInfo(name="Curtain Controller"),
+            "dy4dh1q0": TuyaBLEProductInfo(name="AOK AM24 Venetian Blinds Motor"),
+        }
+    ),
+    "zwjcy": TuyaBLECategoryInfo(
+        products={
+            "jabotj1z": TuyaBLEProductInfo(
+                name="SRB-PM01 Soil Moisture Sensor",
+            ),
         },
     ),
 }

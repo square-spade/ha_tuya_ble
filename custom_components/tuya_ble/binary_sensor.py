@@ -100,8 +100,9 @@ mapping: dict[str, TuyaBLECategoryBinarySensorMapping] = {
     ),
     "ms": TuyaBLECategoryBinarySensorMapping(
         products={
+            # TODO: Review how many of these are better off as a switch only?
             **dict.fromkeys(
-                ["okkyfgfs"],  # Smart Lock
+                ["okkyfgfs", "sidhzylo", "mqc2hevy"],  # Smart Lock
                 [
                     TuyaBLEBinarySensorMapping(
                         dp_id=47,
@@ -113,6 +114,19 @@ mapping: dict[str, TuyaBLECategoryBinarySensorMapping] = {
             ),
         }
     ),
+    # "jtmspro": TuyaBLECategoryBinarySensorMapping(
+    #     products={
+    #         "ajk32biq": [
+    #             TuyaBLEBinarySensorMapping(
+    #                 dp_id=24,
+    #                 description=BinarySensorEntityDescription(
+    #                     key="doorbell",
+    #                     device_class=BinarySensorDeviceClass.DOORBELL,
+    #                 ),
+    #             ),
+    #         ],
+    #     }
+    # ),
 }
 
 
