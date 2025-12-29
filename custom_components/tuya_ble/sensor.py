@@ -184,11 +184,59 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         state_class=SensorStateClass.MEASUREMENT,
                     ),
                 ),
-            ]
-        }
+            ],
+        },
     ),
     "ms": TuyaBLECategorySensorMapping(
         products={
+            "k53ok3u9": [  # Smalock Fingerprint
+                    TuyaBLESensorMapping(
+                    dp_id=21,  # Requires more testing
+                    description=SensorEntityDescription(
+                        key="alarm_lock",
+                        icon="mdi:alarm-light-outline",
+                        device_class=SensorDeviceClass.ENUM,
+                        options=[
+                            "wrong_finger",
+                            "wrong_password",
+                            "wrong_card",
+                            "wrong_face",
+                            "tongue_bad",
+                            "too_hot",
+                            "unclosed_time",
+                            "tongue_not_out",
+                            "pry",
+                            "key_in",
+                            "low_battery",
+                            "power_off",
+                            "shock",
+                            "defense",
+                        ],
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=12,  # Retrieve last fingerprint used
+                    description=SensorEntityDescription(
+                        key="unlock_fingerprint",
+                        icon="mdi:fingerprint",
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=13, 
+                    description=SensorEntityDescription(
+                        key="unlock_ble",
+                        icon="mdi:bluetooth",
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=54,  
+                    description=SensorEntityDescription(
+                        key="synch_method",
+                        icon="mdi:sync",
+                    ),
+                ),
+                TuyaBLEBatteryMapping(dp_id=8),
+            ],
             **dict.fromkeys(
                 [
                     "ludzroix",
@@ -220,6 +268,11 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
             ),
             "mqc2hevy": [  # Smart Lock - YSG_T8_8G_htr
                 # TODO: TuyaBLEAlarmLockStateMapping(dp_id=21) ?
+        },
+    ),
+    "jtmspro": TuyaBLECategorySensorMapping(
+        products={
+            "xicdxood": [  # Raycube K7 Pro+
                 TuyaBLESensorMapping(
                     dp_id=21,
                     description=SensorEntityDescription(
@@ -280,7 +333,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     ),
                 ),
             ],
-        }
+        },
     ),
     "jtmspro": TuyaBLECategorySensorMapping(
         products={

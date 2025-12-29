@@ -73,6 +73,17 @@ class TuyaBLEWaterValveInfo:
     smart_weather: str
     use_time: int
 
+@dataclass
+class TuyaBLELockInfo:
+    """Model a lock"""
+
+    bluetooth_unlock: str
+    unlock_ble: int
+    unlock_fingerprint: int | None = None
+    battery: int
+    volume: str | None = None
+    status: int | None = None
+    synch_method: str | None = None
 
 @dataclass
 class TuyaBLEProductInfo:
@@ -82,7 +93,8 @@ class TuyaBLEProductInfo:
     manufacturer: str = DEVICE_DEF_MANUFACTURER
     fingerbot: TuyaBLEFingerbotInfo | None = None
     watervalve: TuyaBLEWaterValveInfo | None = None
-    lock: int | None = None
+    blelock: TuyaBLELockInfo | None = None
+    lock: int = 0
 
 
 class TuyaBLEEntity(CoordinatorEntity):
@@ -344,7 +356,7 @@ class TuyaBLECategoryInfo:
     info: TuyaBLEProductInfo | None = None
 
 
-devices_database: dict[str, TuyaBLECategoryInfo] = {
+devices_database: dict[str, TuyaBLECategoryInfo]= {
     "co2bj": TuyaBLECategoryInfo(
         products={
             "59s19z5m": TuyaBLEProductInfo(  # device product_id
@@ -374,7 +386,15 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
             "k53ok3u9": TuyaBLEProductInfo(
                 name="Fingerprint Smart Lock",
-                lock=1,
+                blelock=TuyaBLELockInfo(
+                    bluetooth_unlock=6,
+                    unlock_ble=19,
+                    unlock_fingerprint=12,
+                    battery=8,
+                    volume=31,
+                    status=21,
+                    synch_method=54,
+                ),
             ),
         },
     ),
@@ -593,7 +613,7 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                 TuyaBLEProductInfo(
                     name="Irrigation computer",
                 ),
-            )
+            ),
         },
     ),
     "dd": TuyaBLECategoryInfo(
