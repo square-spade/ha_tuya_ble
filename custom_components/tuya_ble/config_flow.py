@@ -27,7 +27,7 @@ from homeassistant.const import (
 from homeassistant.core import callback
 from homeassistant.data_entry_flow import FlowHandler, FlowResult
 
-from .tuya_ble import SERVICE_UUID, TuyaBLEDeviceCredentials
+from .tuya_ble import SERVICE_UUIDS, TuyaBLEDeviceCredentials
 
 from .const import (
     TUYA_COUNTRIES,
@@ -118,6 +118,8 @@ def _show_login_form(
             def_country_name = def_country.name
     except:
         pass
+
+    placeholders["url"] = "https://www.home-assistant.io/integrations/tuya/"
 
     return flow.async_show_form(
         step_id="login",
@@ -315,7 +317,7 @@ class TuyaBLEConfigFlow(ConfigFlow, domain=DOMAIN):
                     discovery.address in current_addresses
                     or discovery.address in self._discovered_devices
                     or discovery.service_data is None
-                    or not SERVICE_UUID in discovery.service_data.keys()
+                    or not any(uuid in discovery.service_data for uuid in SERVICE_UUIDS)
                 ):
                     continue
                 self._discovered_devices[discovery.address] = discovery
