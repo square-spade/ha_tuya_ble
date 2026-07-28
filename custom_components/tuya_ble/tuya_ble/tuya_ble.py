@@ -9,7 +9,7 @@ import time
 from collections.abc import Callable, Hashable
 from struct import pack, unpack
 from dataclasses import dataclass
-from typing import Any
+from typing import Dict, Tuple, Any
 
 import json
 
@@ -523,11 +523,11 @@ class TuyaBLEDevice:
         return ""
 
     @property
-    def function(self) -> dict(str, dict):
+    def function(self) -> Dict[str, dict]:
         return self._function
 
     @property
-    def status_range(self) -> dict(str, dict):
+    def status_range(self) -> Dict[str, dict]:
         return self._status_range
 
     @property
@@ -935,7 +935,7 @@ class TuyaBLEDevice:
         return result
 
     @staticmethod
-    def _unpack_int(data: bytes, start_pos: int) -> tuple(int, int):
+    def _unpack_int(data: bytes, start_pos: int) -> Tuple[int, int]:
         result: int = 0
         offset: int = 0
         while offset < 5:
@@ -1206,7 +1206,7 @@ class TuyaBLEDevice:
         if security_flag == 5:
             return self._session_key
 
-    def _parse_timestamp(self, data: bytes, start_pos: int) -> tuple(float, int):
+    def _parse_timestamp(self, data: bytes, start_pos: int) -> Tuple[float, int]:
         timestamp: float
         pos = start_pos
         if pos >= len(data):
